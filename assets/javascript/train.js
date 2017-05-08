@@ -47,5 +47,20 @@
 
   	});
 
+  	database.ref().on("child_added", function(childSnapshot, prevChildKey) {
+  		// Store everything into a variable.
+  		var trainNameDB = childSnapshot.val().trainName;
+  		var destinationDB = childSnapshot.val().destination;
+  		var firstTrainDB = childSnapshot.val().firstTrain;
+  		var frequencyDB = childSnapshot.val().frequency;
+
+  		$("tbody").append("<tr><td>" + trainNameDB + "</td><td>" + destinationDB + "</td><td>" + frequencyDB + "</td>");
+  	});
+
+
+
+
+
+
   	
 
